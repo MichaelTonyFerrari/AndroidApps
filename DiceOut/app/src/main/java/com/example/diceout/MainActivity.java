@@ -8,9 +8,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Field to hold the roll result text
+    TextView rollResult;
+
+    // Field to hold roll button
+    Button rollButton;
+
+
+
 
     // Hold score
     int score;
@@ -35,8 +46,15 @@ public class MainActivity extends AppCompatActivity {
         // Set initial score
         score = 0;
 
+        rollResult = (TextView) findViewById(R.id.rollResult);
+        rollButton = (Button) findViewById(R.id.rollButton);
+
         // Create greeting
         Toast.makeText(getApplicationContext(), "Welcome to Diceout", Toast.LENGTH_LONG).show();
+    }
+
+    public void rollDice(View v){
+        rollResult.setText("Clicked!");
     }
 
     @Override
